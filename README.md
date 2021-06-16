@@ -71,4 +71,15 @@ obj2: {
   // We cannot do this because x is not declared above in its declaration
   x: 145
 };
+
+// This is how we work with the interface data structure
+interface Address {
+  houseNumber: number;
+  streetName?: string;
+}
+
+let interfaceA: Adress = { houseNumber: 22 };
+// This is optional, there is not going to be any problem
+// If we declare it or not
+let interfaceB: Adress = { streetName: "Juan Pabloo II" };
 ```
