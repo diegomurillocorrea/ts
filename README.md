@@ -243,6 +243,53 @@ interface PhoneNumberDict {
   phoneDict.office; // This one would be present too
   phoneDict.mobile; This one maybe would be present
 }
+
+// To wrap up:
+// Type Aliases are eaguer, flexible
+// Iterfaces are lazy and those are types we can find instead of primitive values
 ```
-### Type Aliases are eaguer, flexible
-### Iterfaces are lazy and those are types we can find instead of primitive values
+### Classes
+```ts
+// In TypeScript we use "implements" instead of "extends" as we do in JavaScript
+export class Contact implements HasEmail {
+  email: string;
+  name: string;
+  constructor ( name: string, email: string ) {
+    this.email = email;
+    this.name = name;
+  }
+}
+```
+### Access Modifiers & Initialization
+Access modifier keywords:
+- public - everyone
+- protected - me and subclasses
+- private - only me
+```ts
+class ParamPropContact implements HasEmail {
+  constructor(
+    public name: string,
+    public email: string = "no email"
+  )
+}
+
+const x = new ParamPropContact( 'a','b' );
+x.a = value
+x.b = value
+
+// But if we declare email as protected:
+protected email: string = "no email"
+// We will no have access to the x.b value
+
+// Default values
+class OtherContact implements HasEmail, HasPhoneNumber {
+  public age = 0;
+  constructor(
+    public name: string,
+    public email: string,
+    public phone: number
+  ) {
+      this.age = 35;
+    }
+}
+```
