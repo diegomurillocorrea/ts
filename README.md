@@ -133,6 +133,7 @@ otherContactInfo.phone;
 
 ### Functions
 ```ts
+// A normal typescript function
 function sendEmail ( to: HasEmail ) : { recipient: string ; body: string } {
   return {
     recipient: `${ to.name } <${ to.email }>`,
@@ -140,5 +141,17 @@ function sendEmail ( to: HasEmail ) : { recipient: string ; body: string } {
     // Diego <diego@elaniin.com>
     body: "You are pre-qualified for a loan!"
   };
+}
+
+// An arrow typescript function
+const sendTextMessage = ( 
+  to: HasPhoneNumber 
+   ) : { recipient: string ; body: string } =>
+    return {
+      recipient: `${ to.name } <${ to.email }>`,
+      // The result is the variables' values we create in the interfaces above
+      // Diego <diego@elaniin.com>
+      body: "You are pre-qualified for a loan!"
+    };
 }
 ```
