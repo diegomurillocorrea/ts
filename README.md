@@ -83,3 +83,49 @@ let interfaceA: Adress = { houseNumber: 22 };
 // If we declare it or not
 let interfaceB: Adress = { streetName: "Juan Pabloo II" };
 ```
+### Intersection & Union Types
+```ts
+// Here we are exporting our interfaces
+export interface HasPhoneNumber {
+  name: string;
+  phone: number;
+}
+
+export interface HasEmail {
+  name: string;
+  phone: number;
+}
+
+// Intersection Operator -> |
+let contactInfo : HasEmail | HasPhoneNumber =
+Math.random() > 0.5
+  ? {
+      // It can be assigned to HasPhoneNumber
+      name: "Diego",
+      phone: 7964630212
+    }
+  : {
+      // or to HasEmail
+      name: "Enrique",
+      email: "diego@elaniin.com"
+    }
+
+// We can only access to the name value, because is the one
+// that exists in both interfaces
+contactInfo.name;
+
+// Union Operator -> &
+let otherContactInfo: HasEmail & HasPhoneNumber = {
+  // Here we will assign the values we have in both interfaces
+  // Those are: name, email and phone
+  name: "Diego",
+  email: "diego@elaniin.com",
+  phone: 7964630212
+}
+
+// We can access to the 3 values because they are linked
+// in both interfaces
+otherContactInfo.name;
+otherContactInfo.email;
+otherContactInfo.phone;
+```
