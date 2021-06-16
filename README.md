@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/83614613/122253473-7002b880-ce89-11eb-8a39-0a3b3c594611.png)
+![image](https://user-images.githubusercontent.com/83614613/122271531-bc0b2880-ce9c-11eb-8d1a-bd0d3381ae7e.png)
 # This is my TypeScript Repository
 
 ## TypeScript Basics
