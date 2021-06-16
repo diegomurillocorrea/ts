@@ -1,5 +1,4 @@
-![image](https://user-images.githubusercontent.com/83614613/122271531-bc0b2880-ce9c-11eb-8d1a-bd0d3381ae7e.png)
-# This is my TypeScript Repository
+# ![image](https://user-images.githubusercontent.com/83614613/122271531-bc0b2880-ce9c-11eb-8d1a-bd0d3381ae7e.png) This is my TypeScript Repository ![image](https://user-images.githubusercontent.com/83614613/122271531-bc0b2880-ce9c-11eb-8d1a-bd0d3381ae7e.png)
 
 ## TypeScript Basics
 ### Variable Declarations
