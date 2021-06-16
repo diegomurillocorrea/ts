@@ -11,3 +11,7 @@ let thisIsAnAny;
 thisIsAnAny = 2;
 thisIsAnAny = "Enrique";
 ```
+### Arrays & Tuples
+```ts
+let array: number[] = [];
+```
