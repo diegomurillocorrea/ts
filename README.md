@@ -133,7 +133,7 @@ otherContactInfo.phone;
 
 ### Functions
 ```ts
-// A normal typescript function
+// A normal TypeScript function
 function sendEmail ( to: HasEmail ) : { recipient: string ; body: string } {
   return {
     recipient: `${ to.name } <${ to.email }>`,
@@ -143,7 +143,7 @@ function sendEmail ( to: HasEmail ) : { recipient: string ; body: string } {
   };
 }
 
-// An arrow typescript function
+// An arrow TypeScript function
 const sendTextMessage = ( 
   to: HasPhoneNumber 
    ) : { recipient: string ; body: string } =>
@@ -154,4 +154,12 @@ const sendTextMessage = (
       body: "You are pre-qualified for a loan!"
     };
 }
+
+// An inferred TypeScript function
+function getNameParts ( contact: { name: string } ) { /* Process */ };
+
+// Rest Params
+const sum = ( ...vals: number[] ) => vals.reduce( ( sum, x ) => sum + x );
+console.log( sum( 3,4,6 ) );
+// 13
 ```
