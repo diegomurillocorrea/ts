@@ -130,5 +130,15 @@ otherContactInfo.phone;
 ```
 ### Type Systems & Object Shapes
 ![image](https://user-images.githubusercontent.com/83614613/122273280-7ea79a80-ce9e-11eb-991b-56e060eaa6fd.png)
+
+### Functions
 ```ts
+function sendEmail ( to: HasEmail ) : { recipient: string ; body: string } {
+  return {
+    recipient: `${ to.name } <${ to.email }>`,
+    // The result is the variables' values we create in the interfaces above
+    // Diego <diego@elaniin.com>
+    body: "You are pre-qualified for a loan!"
+  };
+}
 ```
