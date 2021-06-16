@@ -25,8 +25,8 @@ array.push( 2 );
 // This is not allowed because is not a number, it is a string rather.
 array.push( "abc" );
 
-// Even if we declare an array with a value, the type of that value is going to be the one the array is going to take.
-
+// Even if we declare an array with a value, the type of that value is 
+going to be the one the array is going to take.
 // 1 typeof = Number
 let array2 = [1];
 array2.push( 2 );
@@ -51,3 +51,5 @@ tuple.push( 5,4,3,2,1 );
 const tuple2 = [ 7, 8 ];
 const tuple3: [ number, number ] = [ 7, 8 ];
 ```
+### Object Types & Interfaces
+                                                                          
