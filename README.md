@@ -174,9 +174,75 @@ type HasName = { name: string };
 const x = [ 1,2,3, [ 1,2,3 ] ];
 type NumVal = 1 | 2 | 3 | NumArr;
 type NumArr = NumVal[];
+interface NumArr extends Array< NumVal > {}
 
 // Interfaces can extend from other interfaces
 export interface HasInternationalPhoneNumber extends HasPhoneNumber {
   countryCode: string;
 }
 ```
+## Call and Construct Sigantures
+```ts
+// This is a function signature
+interface ContactMessenger1 {
+  ( contact: HasEmail | HasPhoneNumber, message: string ) void;
+}
+
+type ContactMessenger2 = (
+  contact: HasEmail | HasPhoneNumber,
+  message: string
+) => void;
+
+// Contextual Inference
+const emailer: ContactMessenger1 = ( _contact, _message ) => { /* code */ };
+
+// Construc Signatures
+interface ContactConstructor {
+  new ( ...args: any[] ): HaEmail | HasPhone;
+};
+```
+## Dictionary Objects & Index Signatures
+```ts
+interface PhoneNumberDict {
+  // arr[ 0 ], foo[ 'myProp' ]
+  [ numberName: string ]:
+    | undefined
+    | {
+        areaCode: number;
+        num: number;
+      };
+}
+
+const d: PhoneNumberDict = {};
+if ( typeof d.abc === "string" ) {
+  d.abc
+}
+
+const phoneDic: PhoneNumberDict = {
+  office: { areaCode: 321, num: 5551212 },
+  // If we misspelt something, TypeScript is going to warn us
+  home: { areCode: 321, num: 5550010 }
+};
+```
+## Combining Interfaces
+```ts
+interface PhoneNumberDict {
+  home: {
+    /*
+      Interfaces are open, meaning any declarations of the same name are merged
+     */
+     areaCode: number;
+     num: number;
+  };
+  office: {
+     areaCode: number;
+     num: number;
+  };
+  
+  phoneDict.home; // This one would be present
+  phoneDict.office; // This one would be present too
+  phoneDict.mobile; This one maybe would be present
+}
+```
+### Type Aliases are eaguer, flexible
+### Iterfaces are lazy and those are types we can find instead of primitive values
