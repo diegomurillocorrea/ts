@@ -163,3 +163,20 @@ const sum = ( ...vals: number[] ) => vals.reduce( ( sum, x ) => sum + x );
 console.log( sum( 3,4,6 ) );
 // 13
 ```
+## Interface Type Basics
+## Type Alias
+```ts
+type StringOrNumber = string | number;
+// This is the only time a type is assigned on the right hand side
+type HasName = { name: string };
+
+// Examples:
+const x = [ 1,2,3, [ 1,2,3 ] ];
+type NumVal = 1 | 2 | 3 | NumArr;
+type NumArr = NumVal[];
+
+// Interfaces can extend from other interfaces
+export interface HasInternationalPhoneNumber extends HasPhoneNumber {
+  countryCode: string;
+}
+```
